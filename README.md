@@ -1,5 +1,8 @@
 # powershell-bypss
+
 powershell命令免杀的小工具，可过Defender、360等，可执行上线cobaltstrike、添加计划任务等。
+
+**请勿使用于任何非法用途，由此产生的后果自行承担。**
 
 上述测试环境均为实体机。
 
