@@ -4,6 +4,8 @@ powershell命令免杀的小工具，可过Defender、360等，可执行上线co
 
 **请勿使用于任何非法用途，由此产生的后果自行承担。**
 
+**理论上来说可以免杀执行任意powershell命令，但是调用了如schtask这类被监控的程序还是会被查杀的。**
+
 上述测试环境均为实体机。
 
 思路很简单，很久之前就有了，工具调用C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation目录下面的System.Management.Automation.dll执行底层api来绕过杀软对powershell的监控。
