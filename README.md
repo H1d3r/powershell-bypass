@@ -18,6 +18,8 @@ powershell命令免杀的小工具，可过Defender、360等，可执行上线co
 
 **这里只是做了个小demo，师傅们可以在demo的基础上来设置自己的命令加密方式，这样可以更有效地避免杀软的静态检测。**
 
+**想钓鱼的师傅可以把命令写定在程序里。**
+
 ![32430eaf1b8ae7db520dd85e5cc82bf](https://user-images.githubusercontent.com/48757788/198879143-1caaf6d9-2ed9-4894-9233-10ff7aa7ad39.jpg)
 
 ![d559a936be1592a0bcbbaff24e88dc8](https://user-images.githubusercontent.com/48757788/198879156-82253c57-ff50-4b21-be0d-d71253db032b.jpg)
