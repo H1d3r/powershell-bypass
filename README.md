@@ -18,7 +18,9 @@ powershell命令免杀的小工具，可过Defender、360等，可执行上线co
 
 **这里只是做了个小demo，师傅们可以在demo的基础上来设置自己的命令加密方式，这样可以更有效地避免杀软的静态检测。**
 
-**想钓鱼的师傅可以把命令写定在程序里。**
+**想单纯来上线cs的师傅可以把IEX开头的powershell命令写定在程序里的myPipeLine.Commands.AddScript参数中，这样免杀效果好一些。**
+
+**免杀上线cs并不是这个工具的初衷，主要是用来规避杀软对powershell的监控，如果想只免杀上线的话尽量把IEX开头的powershell命令写定在程序中，可以尝试做命令的混淆/加密。**
 
 ![32430eaf1b8ae7db520dd85e5cc82bf](https://user-images.githubusercontent.com/48757788/198879143-1caaf6d9-2ed9-4894-9233-10ff7aa7ad39.jpg)
 
