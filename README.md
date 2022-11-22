@@ -1,6 +1,8 @@
 # powershell-bypss
 
-AMSI绕过+Automation执行powershell命令实现的powershell命令免杀的小工具，可过Defender、360等，可执行上线cobaltstrike、添加计划任务等。
+powershell命令免杀的小工具，可过Defender、360等，可执行上线cobaltstrike、添加计划任务等。
+
+AMSI绕过+Automation执行powershell命令
 
 **请勿使用于任何非法用途，由此产生的后果自行承担。**
 
