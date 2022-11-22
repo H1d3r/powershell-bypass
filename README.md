@@ -4,6 +4,8 @@ powershell命令免杀的小工具，可过Defender、360等，可执行上线co
 
 AMSI绕过+Automation执行powershell命令。
 
+理论上来说遇到禁用powershell的情况也可以通过该工具执行powershell的命令。
+
 **请勿使用于任何非法用途，由此产生的后果自行承担。**
 
 **理论上来说可以免杀执行任意powershell命令，但是调用了如schtask这类被监控的程序还是会被查杀的。**
