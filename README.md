@@ -2,7 +2,7 @@
 
 powershell命令免杀的小工具，可过Defender、360等，可执行上线cobaltstrike、添加计划任务等。
 
-AMSI绕过+Automation执行powershell命令。
+AMSI绕过+ETW绕过+Automation执行powershell命令。
 
 理论上来说遇到禁用powershell的情况也可以通过该工具执行powershell的命令。
 
@@ -12,7 +12,7 @@ AMSI绕过+Automation执行powershell命令。
 
 上述测试环境均为实体机。
 
-思路很简单，很久之前就有了，工具调用C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation目录下面的System.Management.Automation.dll执行底层api来绕过杀软对powershell的监控，同时绕过AMSI的检测。由于patch绕过AMSI的方法会被360查杀，因此这里使用了设置System.Management.Automation.AmsiUtils的方法来绕过。
+思路很简单，很久之前就有了，工具调用C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation目录下面的System.Management.Automation.dll执行底层api来绕过杀软对powershell的监控，同时绕过AMSI的检测与对ETW的监控。由于patch绕过AMSI的方法会被360查杀，因此这里使用了设置System.Management.Automation.AmsiUtils的方法来绕过。
 
 这里用对命令进行了base64编码，当然这就是一个命令的加载器，具体怎么加密命令有各种各样的方法。
 
