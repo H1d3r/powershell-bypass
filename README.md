@@ -24,6 +24,9 @@ AMSI绕过+Automation执行powershell命令。
 
 ![image](https://user-images.githubusercontent.com/48757788/203709296-768cc97f-29bf-432a-b260-2e654164cd07.png)
 
+![1669271189122](https://user-images.githubusercontent.com/48757788/203709759-c0b5edf1-26d2-4fea-b1be-199aedf31008.jpg)
+
+
 
 
 
