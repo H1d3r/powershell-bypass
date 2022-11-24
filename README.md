@@ -22,6 +22,9 @@ AMSI绕过+Automation执行powershell命令。
 
 **想单纯来上线cs的师傅可以把IEX开头的powershell命令写定在程序里的myPipeLine.Commands.AddScript参数中**
 
+![image](https://user-images.githubusercontent.com/48757788/203709296-768cc97f-29bf-432a-b260-2e654164cd07.png)
+
+
 
 
 
