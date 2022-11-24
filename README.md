@@ -10,6 +10,8 @@ AMSI绕过+Automation执行powershell命令。
 
 **理论上来说可以免杀执行任意powershell命令，但是调用了如schtask这类被监控的程序还是会被查杀的。**
 
+**如果目标主机上只存在powershell2.0，那么可能有兼容性问题，我正在尝试解决。**
+
 上述测试环境均为实体机。
 
 思路很简单，很久之前就有了，工具调用C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation目录下面的System.Management.Automation.dll执行底层api来绕过杀软对powershell的监控，同时绕过AMSI的检测。由于patch绕过AMSI的方法会被360查杀，因此这里使用了设置System.Management.Automation.AmsiUtils的方法来绕过。
