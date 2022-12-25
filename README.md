@@ -22,6 +22,12 @@ AMSI绕过+ETW绕过+Automation执行powershell命令。
 
 **想单纯来上线cs的师傅可以把IEX开头的powershell命令写定在程序里的myPipeLine.Commands.AddScript参数中**
 
+**编译**
+
+1、正常的编译：目标版本设置为4.8编译
+
+2、面向低版本win7/winserver的编译：将Class1.cs中的28-32行代码注释掉，目标版本设置为2.0编译
+
 ![image](https://user-images.githubusercontent.com/48757788/203709296-768cc97f-29bf-432a-b260-2e654164cd07.png)
 
 ![1669271189122](https://user-images.githubusercontent.com/48757788/203709759-c0b5edf1-26d2-4fea-b1be-199aedf31008.jpg)
