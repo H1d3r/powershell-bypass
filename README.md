@@ -22,7 +22,7 @@ AMSI绕过+ETW绕过+Automation执行powershell命令。
 
 **想单纯来上线cs的师傅可以把IEX开头的powershell命令写定在程序里的myPipeLine.Commands.AddScript参数中**
 
-**编译**
+## 编译
 
 1、正常的编译：目标版本设置为4.8编译
 
